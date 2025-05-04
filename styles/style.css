@@ -24,8 +24,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display: flex;
+  display: flex; 
   place-items: center;
+  align-items: center;
+
 }
 
 h1,
@@ -61,13 +63,15 @@ ol {
 }
 
 .content {
+  background-color: green;
   display: grid;
   grid-auto-flow: column;
   grid-template-areas: 'result content__details';
   grid-template-columns: calc(var(--screen-height) - var(--details-height) - var(--gap-size)) var(--details-height);
   align-items: end;
-  column-gap: var(--gap-size);
+   column-gap: var(--gap-size);
   inline-size: var(--screen-height);
+  margin-right: 0;
 } 
 
 .search-form {
@@ -77,10 +81,14 @@ ol {
 }
 
 .result {
+  background-color: aqua;
   grid-area: result;
+  /* padding-top: 75px; */
+
 } 
 
 .content__details {
+  background-color: blue;
   grid-area: content__details;
 }
 
@@ -99,20 +107,22 @@ ol {
   object-position:center;
 }
 
-.content__list-item {
+.content__list-item:not(:last-of-type) {
   display: grid;
   margin-block-end: var(--gap-size);
-  gap: 5px;
+  /* gap: 5px; */
 }
 
 .content__video-card {
   display: flex;
+
 }
 
 .content__video-card-description-container {
   /* Сделайте так, чтобы .content__video-card-description-container 
   занимал всё доступное пространство (не занятое картинкой). Вам поможет свойство flex-grow. */
   flex-grow: 1;
+  max-width: 196px;
 }
 
 .content__video-card-description {
@@ -124,6 +134,8 @@ ol {
   line-height: 16.2px;
   letter-spacing: 0%;
   -webkit-line-clamp: 4;
+  padding-left: 3px;
+  padding-top: 3px;
 }
 
 .content__video-card-thumbnail {
@@ -138,12 +150,17 @@ ol {
 
 .content__list-container {
   position: relative;
-  height: 313px;
+  margin-top: 20px;
+  height: 298px;
   overflow-y: auto;
 }
 
 .content__accent {
   color: var(--active-color);
+  margin-top: 0;
+  background-color: aqua;
+  padding-top: -10px;
+  display: inline;
 }
 
 .content__card-link {
@@ -174,13 +191,17 @@ ol {
 }
 
 .content__video-card-title {
-  margin-block:6px ;
+  /* margin-block:6px ; */
   font-family: Oswald, sans-serif;
   font-size: 30px;
   line-height: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding-top: 3px;
+  padding-left: 3px;
+
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .search-form__fieldset {
@@ -258,8 +279,8 @@ ol {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  min-inline-size: 12px;
-  min-block-size: 12px;
+  min-inline-size: 15px;
+  min-block-size: 15px;
   background-color: white;
 }
 
@@ -272,6 +293,10 @@ ol {
   color: white;
   font-family: inherit;
   font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
   background-color: transparent;
   cursor: pointer;
 }
