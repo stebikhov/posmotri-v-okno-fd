@@ -17,7 +17,7 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
+  inline-size: 1140px;
   block-size: 100%;
   margin: auto;
   color: white;
@@ -27,7 +27,6 @@ html {
   display: flex; 
   place-items: center;
   align-items: center;
-
 }
 
 h1,
@@ -63,7 +62,6 @@ ol {
 }
 
 .content {
-  background-color: green;
   display: grid;
   grid-auto-flow: column;
   grid-template-areas: 'result content__details';
@@ -81,14 +79,10 @@ ol {
 }
 
 .result {
-  background-color: aqua;
   grid-area: result;
-  /* padding-top: 75px; */
-
 } 
 
 .content__details {
-  background-color: blue;
   grid-area: content__details;
 }
 
@@ -132,7 +126,7 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  letter-spacing: 0%;
+  letter-spacing: 3%;
   -webkit-line-clamp: 4;
   padding-left: 3px;
   padding-top: 3px;
@@ -158,7 +152,6 @@ ol {
 .content__accent {
   color: var(--active-color);
   margin-top: 0;
-  background-color: aqua;
   padding-top: -10px;
   display: inline;
 }
@@ -184,6 +177,7 @@ ol {
 
 .content__card-link:active {
   background-color: var(--active-color);
+  text-decoration: underline;
 }
 
 .content__card-link_current {
@@ -251,17 +245,30 @@ ol {
   min-inline-size: 225px;
   min-block-size: 27px;
   border: none;
-  border-block-start: var(--border-style);
-  border-block-end: var(--border-style);
+  border-top: var(--border-style);
+  border-bottom: var(--border-style);
   color: white;
   font-family: inherit;
   font-size: inherit;
   background-color: transparent;
   appearance: none;
+  padding: 3px;
 }
 
 .search-form__textfield:focus {
   outline: none;
+}
+
+.search-form__textfield:active {
+  outline: var(--border-style)
+}
+
+.search-form__textfield:focus-visible {
+  outline: var(--border-style)
+}
+
+.search-form__textfield:hover {
+  cursor: text;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -307,6 +314,7 @@ ol {
 
 .button:active {
   background-color: var(--active-color);;
+  text-decoration: none;
 }
 
 .button:focus {
@@ -314,6 +322,7 @@ ol {
 }
 
 .more-button {
+  margin-top: var(--gap-size);
   inline-size: 99%;
   min-block-size: 34px;
 }
